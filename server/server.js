@@ -55,5 +55,8 @@ app.use("/api/shop/search", shopSearchRouter);
 app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
+app.get("/", () => {
+  res.send("Welcome to E-Commerce API");
+});
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
