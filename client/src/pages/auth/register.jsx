@@ -20,6 +20,13 @@ function AuthRegister() {
 
   function onSubmit(event) {
     event.preventDefault();
+    if (!formData.userName || !formData.email || !formData.password) {
+      toast({
+        title: "All fields are required!",
+        variant: "destructive",
+      });
+      return;
+    }
     dispatch(registerUser(formData)).then((data) => {
       if (data?.payload?.success) {
         toast({
